@@ -5,3 +5,20 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
+second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
+
+# Create 4 posts 
+first_post = Post.create(author: first_user, title: 'Hello one', text: 'This is my first post')
+second_post = Post.create(author: first_user, title: 'Hello two', text: 'This is my second post')
+third_post = Post.create(author: first_user, title: 'Hello tree', text: 'This is my third post')
+fours_post = Post.create(author: first_user, title: 'Hello four', text: 'This is my fours post')
+
+# Add 6 comments
+Comment.create(post: first_post, author: second_user, text: 'Hi comment 1' )
+Comment.create(post: first_post, author: second_user, text: 'Hi comment 2' )
+Comment.create(post: first_post, author: second_user, text: 'Hi comment 3' )
+Comment.create(post: first_post, author: second_user, text: 'Hi comment 4' )
+Comment.create(post: first_post, author: second_user, text: 'Hi comment 5' )
+Comment.create(post: first_post, author: second_user, text: 'Hi comment 6' )
