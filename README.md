@@ -50,10 +50,6 @@ The Blog app exemplifies a typical blog website. Its functionality includes disp
 > - Comment the post.
 > - Like the post.
 
-## 🚀 Live Demo <a name="live-demo"></a>
-
-[Check the link]()
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- GETTING STARTED -->
