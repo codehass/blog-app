@@ -18,4 +18,22 @@ RSpec.describe '/posts', type: :request do
       expect(response.body).to include('Hello, This is posts')
     end
   end
+
+  describe 'GET /show' do
+    before(:example) do
+      get '/users/1/posts/1'
+    end
+
+    it 'renders a successful response' do
+      expect(response).to be_successful
+    end
+
+    it 'renders the index template' do
+      expect(response).to render_template('show')
+    end
+
+    it 'renders the correct body content' do
+      expect(response.body).to include('Hello, This is post id')
+    end
+  end
 end
