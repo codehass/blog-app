@@ -1,15 +1,85 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+* {
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.usersCards {
+  width: 80%;
+  margin: auto;
+}
+
+.userCard {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.userCard a {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.userCard img {
+  width: 115px;
+  border-radius: 10px;
+}
+
+.userInfo {
+  display: flex;
+  justify-content: space-between;
+  gap: 50%;
+  width: 70%;
+  height: 100px;
+  align-items: start;
+  background: #80808045;
+  padding: 10px 20px;
+  border-radius: 10px;
+}
+
+.userInfo p {
+  padding-top: 34px;
+}
+
+.bio {
+  width: 80%;
+  margin: auto;
+  border: 1px solid;
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.postInfo {
+  padding: 0;
+}
+
+.postCard {
+  width: 80%;
+  margin: auto;
+  border: 1px solid;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+}
+
+.postCard a {
+  display: flex;
+  flex-direction: column;
+}
+
+.likesComments {
+  display: flex;
+  justify-content: end;
+}
+
+.container {
+  width: 80%;
+  margin: auto;
+}
