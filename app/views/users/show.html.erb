@@ -1,1 +1,39 @@
-<h1>Hello, This is user id </h1>
+<div class='usersCards'>
+  <div class="userCard">
+    <a href="#" >
+      <div >
+        <img src=<%= @user.photo %>>
+      </div>
+      <div class="userInfo">
+        <h2 ><%= @user.name %></h2>
+        <p >Number of posts: <%= @user.posts_counter %></p>
+      </div>
+    </a>
+  </div>
+  <div class="bio"> 
+    <h4>Bio</h4>
+    <p >
+    <%= @user.bio %>
+   </p>
+  </div>
+
+  <ul class='postInfo'>
+    <% @posts.each do |post| %>
+      <li class='postCard'>
+        <a href="<%= user_posts_path(@user) %>" >
+          <h3 ><%= post.title %></h3>
+          <p ><%= post.text %></p>
+          <div class="likesComments">
+            <p >Likes: <%= post.likes_counter  %> ,</p>
+            <p >comments: <%= post.comments_counter %> </p>
+          </div>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+  <div class="btnSeeAll">
+    <a href=<%= "/users/#{@user.id}/posts"%> >
+    See All Posts
+    </a>
+  </div>
+</div>
