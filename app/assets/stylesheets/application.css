@@ -83,3 +83,16 @@ a {
   width: 80%;
   margin: auto;
 }
+
+.btnSeeAll {
+  display: flex;
+  justify-content: center;
+}
+
+.btnSeeAll a {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+}
