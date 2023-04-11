@@ -88,23 +88,25 @@ In order to run this project you need:
 
 ```
 
-### Install
-
 - Install this project with:
 
 ```sh
  bundle install
 ```
 
-### Usage
-
-- To run the project execute this command:
+- Set up the database
 
 ```sh
- ruby main.rb
+ rails db:create db:migrate db:seed
 ```
 
-### Run tests
+- Start the server
+
+```sh
+ rails s
+```
+
+- Run tests
 
 ```sh
  rspec spec
@@ -122,6 +124,10 @@ In order to run this project you need:
 - Twitter: [@hassanelourdy](https://twitter.com/hassanelourdy)
 - LinkedIn: [Hassan El OUARDY](https://www.linkedin.com/in/hassan-el-ouardy-360b99169/)
 
+👤 **Wahaj Ali**
+
+- GitHub: [@Wahaj-Ali](https://github.com/Wahaj-Ali)
+- LinkedIn: [@wahaj-ali96](https://www.linkedin.com/in/wahaj-ali96/)
 <!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
