@@ -1,16 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "User show", type: :feature do
+RSpec.describe 'User show', type: :feature do
   before :each do
-    @user1 = User.create(id: 5, name: 'Ali', photo: 'https://picsum.photos/300/200', bio: 'Software Engineer from Pakistan', posts_counter: 12)
+    @user1 = User.create(id: 5, name: 'Ali', photo: 'https://picsum.photos/300/200',
+                         bio: 'Software Engineer from Pakistan', posts_counter: 12)
     @post1 = Post.create(author: @user1, title: 'Title 1', text: 'This is my first post')
     @post2 = Post.create(author: @user1, title: 'Title 2', text: 'This is my second post')
     @post3 = Post.create(author: @user1, title: 'Title 3', text: 'This is my third post')
     visit user_path(@user1.id)
   end
-  
-  it "Show user name" do
-    expect(page).to have_content(@user1.name)  
+
+  it 'Show user name' do
+    expect(page).to have_content(@user1.name)
   end
 
   it 'I can see the profile picture for each user.' do
@@ -25,15 +26,15 @@ RSpec.describe "User show", type: :feature do
     expect(page).to have_content(@user1.bio)
   end
 
-  it 'Should render the last 3 posts' do 
+  it 'Should render the last 3 posts' do
     expect(page).to have_content(@post1.title)
     expect(page).to have_content(@post2.title)
     expect(page).to have_content(@post3.title)
   end
 
-  
+
   it 'I can see the button that lets me view all the posts' do
-    expect(page).to have_content("See All Posts")
+    expect(page).to have_content('See All Posts')
   end
 
   it "Redirect to user's post's show page when clicked" do
@@ -43,8 +44,8 @@ RSpec.describe "User show", type: :feature do
   end
 
 
-  it "Redirect  all posts page when clicked See All Posts" do
-    click_link "See All Posts"
+  it 'Redirect  all posts page when clicked See All Posts' do
+    click_link 'See All Posts'
     expect(page).to have_current_path(user_posts_path(@user1))
   end
 end

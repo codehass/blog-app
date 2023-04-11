@@ -1,15 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "User index", type: :feature do
+RSpec.describe 'User index', type: :feature do
   before :each do
-    @user1 = User.create(name: 'Ali', photo: 'https://picsum.photos/300/200', bio: 'Software Engineer from Pakistan', posts_counter: 12)
-    @user2 = User.create(name: 'Hassan', photo: 'https://picsum.photos/300/200', bio: 'Software Engineer from Morocco', posts_counter: 2)
+    @user1 = User.create(name: 'Ali', photo: 'https://picsum.photos/300/200', bio: 'Software Engineer from Pakistan',
+                         posts_counter: 12)
+    @user2 = User.create(name: 'Hassan', photo: 'https://picsum.photos/300/200', bio: 'Software Engineer from Morocco',
+                         posts_counter: 2)
     visit users_path
   end
-  
-  it "Show user name" do
-    expect(page).to have_content(@user1.name) 
-    expect(page).to have_content(@user2.name) 
+
+  it 'Show user name' do
+    expect(page).to have_content(@user1.name)
+    expect(page).to have_content(@user2.name)
   end
 
   it 'I can see the profile picture for each user.' do
@@ -26,5 +28,4 @@ RSpec.describe "User index", type: :feature do
     visit user_path(@user1)
     expect(current_path).to eql(user_path(@user1))
   end
- 
 end

@@ -1,8 +1,8 @@
 require 'rails_helper'
 RSpec.describe 'Posts', type: :feature do
   before(:example) do
-    @user = User.create( name: 'John Doe',
-                        photo: 'https://cdn.pixabay.com/photo/2023/03/07/18/07/chocolate-7836231_960_720.png', bio: 'live to bio', posts_counter: 12)
+    @img = 'https://cdn.pixabay.com/photo/2023/03/07/18/07/chocolate-7836231_960_720.png'
+    @user = User.create(name: 'John Doe', photo: @img, bio: 'live to bio', posts_counter: 12)
     @post = Post.create(author: @user, title: 'title', text: 'content')
     @comment = Comment.create(text: 'comment', post: @post, author: @user)
     @like = Like.create(post: @post, author: @user)
