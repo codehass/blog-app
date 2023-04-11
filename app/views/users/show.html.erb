@@ -20,7 +20,7 @@
   <ul class='postInfo'>
     <% @posts.each do |post| %>
       <li class='postCard'>
-        <a href="<%= user_posts_path(@user) %>" >
+        <a href="<%= user_post_path(@user, post) %>" >
           <h3 ><%= post.title %></h3>
           <p ><%= post.text %></p>
           <div class="likesComments">
