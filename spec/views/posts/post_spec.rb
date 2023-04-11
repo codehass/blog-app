@@ -1,4 +1,5 @@
 require 'rails_helper'
+
 RSpec.describe 'Posts', type: :feature do
   before(:example) do
     @img = 'https://cdn.pixabay.com/photo/2023/03/07/18/07/chocolate-7836231_960_720.png'
@@ -7,6 +8,7 @@ RSpec.describe 'Posts', type: :feature do
     @comment = Comment.create(text: 'comment', post: @post, author: @user)
     @like = Like.create(post: @post, author: @user)
   end
+
   describe 'GET /posts' do
     before(:example) do
       visit user_posts_path(@user)
@@ -42,6 +44,7 @@ RSpec.describe 'Posts', type: :feature do
       expect(current_path).to eq user_post_path(@user, @post)
     end
   end
+
   describe 'GET /posts/:id' do
     before(:example) do
       visit user_post_path(@user, @post)
