@@ -10,8 +10,6 @@ RSpec.describe 'Posts index', type: :feature do
     visit user_posts_path(@user)
   end
 
-
-
   it 'I can see the profile picture for each user.' do
     expect(page).to have_css('img')
   end
