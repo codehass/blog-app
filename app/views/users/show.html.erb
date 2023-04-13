@@ -24,8 +24,20 @@
           <h3 ><%= post.title %></h3>
           <p ><%= post.text %></p>
           <div class="likesComments">
-            <p >Likes: <%= post.likes_counter  %> ,</p>
-            <p >comments: <%= post.comments_counter %> </p>
+                    <p >
+          <% if post.likes_counter == nil %>
+            Likes: 0 
+          <% else %>
+            Likes: <%= post.likes_counter %>
+          <% end %>
+        </p>
+        <p >
+          <% if post.comments_counter == nil %>
+            Comments: 0 
+          <% else %>
+            Comments: <%= post.comments_counter %>
+          <% end %>
+        </p>
           </div>
         </a>
       </li>
