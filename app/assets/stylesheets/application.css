@@ -13,6 +13,24 @@ a {
   text-decoration: none;
 }
 
+.notification {
+  text-align: center;
+}
+
+.notice {
+  background-color: rgb(54, 205, 54);
+  color: #fff;
+  width: 30%;
+  margin: auto;
+}
+
+.alert {
+  background-color: rgb(242, 79, 79);
+  color: #fff;
+  width: 30%;
+  margin: auto;
+}
+
 nav ul {
   display: flex;
   justify-content: end;
@@ -33,6 +51,7 @@ nav ul li a {
 .usersCards {
   width: 80%;
   margin: auto;
+  padding-left: 0;
 }
 
 .userCard {
@@ -44,7 +63,7 @@ nav ul li a {
 .userCard a {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .userCard img {
