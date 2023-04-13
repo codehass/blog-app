@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   load_and_authorize_resource
-  
+
   def index
     @user = User.find(params[:user_id])
     @posts = @user.posts.includes(:comments)
@@ -48,4 +48,3 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :text)
   end
 end
-
