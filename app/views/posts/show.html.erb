@@ -2,14 +2,31 @@
   <div class='postInfo'>
     <div class='postCard'>  
       <h2 ><%= @post.title %></h2>
+      <% if can? :destroy , @post %>
+    	  <%= button_to "Delete Post", user_post_path(current_user, @post), method: :delete, data: { confirm: 'Are you sure?' } %>
+  	  <% end %> 
       <p ><%= @post.text %></p>
       <div class="likesComments">
-        <p >Likes: <%= @post.likes_counter  %> ,</p>
-        <p >comments: <%= @post.comments_counter %> </p>
+        <p >
+          <% if @post.likes_counter == nil %>
+            Likes: 0 
+          <% else %>
+            Likes: <%= @post.likes_counter %>
+          <% end %>
+        </p>
+        <p >
+          <% if @post.comments_counter == nil %>
+            Comments: 0 
+          <% else %>
+            Comments: <%= @post.comments_counter %>
+          <% end %>
+        </p>
+
+        
       </div>
           <%= form_with model: [@post, @like], url: create_post_like_path  do |form| %>
-      <div class="mb-4 flex flex-col">
-        <%= form.submit "Like 👍" , class: "text-[#11537d] text-xl font-medium bg-white px-4 py-2 rounded-[15px] w-fit cursor-pointer" %>
+      <div>
+        <%= form.submit "Like 👍"  %>
       </div>
     <% end %>
     </div> 
@@ -18,10 +35,13 @@
     <% @comments.each do |comment| %>
       <div >  
         <p ><%= comment.author.name %>: <%= comment.text %></p>
+        <% if can? :destroy, comment %>
+          <%= button_to "Delete Comment", user_post_comment_path(comment.author, comment.post, comment), method: :delete, data: { confirm: 'Are you sure?' }, class: "delete_comment_btn" %>
+        <% end %>
       </div>
     <% end %>
     <div class="btnSeeAll">
-      <%= link_to "add comment", new_post_comment_path(@post)%>
+      <%= link_to "add comment", new_user_post_comment_path(@user, @post)%>
      </div>
     
   </div>

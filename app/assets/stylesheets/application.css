@@ -43,6 +43,15 @@ nav ul li {
   background-color: #2c83eb;
 }
 
+nav ul li button {
+  text-decoration: none;
+  border: none;
+  background: #2c83eb;
+  color: #fff;
+  font-size: 18px;
+  font-family: 'popins', sans-serif;
+}
+
 nav ul li a {
   color: #fff;
   font-size: 18px;
@@ -116,6 +125,7 @@ nav ul li a {
 .likesComments {
   display: flex;
   justify-content: end;
+  gap: 10px;
 }
 
 .container {
